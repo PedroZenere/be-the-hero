@@ -14,7 +14,6 @@ module.exports = {
         const { name, email, whatsapp, city, uf } = request.body;
     
         const id = crypto.randomBytes(4).toString('HEX');
-        //console.log(body)
 
         await connection('ongs').insert({
             id,
@@ -23,7 +22,7 @@ module.exports = {
             whatsapp,
             city,
             uf
-        })
+        });
 
         return response.json({ id });
     }
